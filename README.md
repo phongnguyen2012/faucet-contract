@@ -1,18 +1,19 @@
-# faucet-contract
-export MAIN_ACCOUNT=phongnguyen2022.testnet
-export NEAR_ENV=testnet
-export CONTRACT_FAUCET_ID=faucet.$MAIN_ACCOUNT
-export CONTRACT_FT_ID=ft.$MAIN_ACCOUNT
-export ONE_YOCTO=0.000000000000000000000005
-export ACCOUNT_TEST1=test1.$MAIN_ACCOUNT
-export ACCOUNT_TEST2=test2.$MAIN_ACCOUNT
-export GAS=300000000000000
+## faucet-contract
+<sub> 
+    export MAIN_ACCOUNT=phongnguyen2022.testnet
+  export NEAR_ENV=testnet
+  export CONTRACT_FAUCET_ID=faucet.$MAIN_ACCOUNT
+  export CONTRACT_FT_ID=ft.$MAIN_ACCOUNT
+  export ONE_YOCTO=0.000000000000000000000005
+  export ACCOUNT_TEST1=test1.$MAIN_ACCOUNT
+  export ACCOUNT_TEST2=test2.$MAIN_ACCOUNT
+  export GAS=300000000000000
 
-echo "################### DELETE ACCOUNT ###################"
-near delete $CONTRACT_FAUCET_ID $MAIN_ACCOUNT
-near delete $ACCOUNT_TEST1 $MAIN_ACCOUNT
-near delete $ACCOUNT_TEST2 $MAIN_ACCOUNT
-
+  echo "################### DELETE ACCOUNT ###################"
+  near delete $CONTRACT_FAUCET_ID $MAIN_ACCOUNT
+  near delete $ACCOUNT_TEST1 $MAIN_ACCOUNT
+  near delete $ACCOUNT_TEST2 $MAIN_ACCOUNT
+</sub>
 echo "################### CREATE ACCOUNT ###################"
 near create-account $CONTRACT_FT_ID --masterAccount $MAIN_ACCOUNT --initialBalance 2
 near create-account $ACCOUNT_TEST1 --masterAccount $MAIN_ACCOUNT --initialBalance 2
@@ -34,10 +35,10 @@ near call $CONTRACT_FAUCET_ID update_pool '{"total_balance_share": "1000000000",
 account (faucet) faucet 1M Token 
 near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "1000000"}' --accountId $CONTRACT_FAUCET_ID --deposit $ONE_YOCTO --gas $GAS
 
-##account (test1) faucet 2M Token 
+account (test1) faucet 2M Token 
 near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "2000000"}' --accountId $ACCOUNT_TEST1 --deposit $ONE_YOCTO --gas $GAS
 
-##account (test2) faucet 3M Token 
+account (test2) faucet 3M Token 
 near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "3000000"}' --accountId $ACCOUNT_TEST2 --deposit $ONE_YOCTO --gas $GAS
 
 ##### 6. Get info faucet
