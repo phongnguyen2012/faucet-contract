@@ -55,14 +55,17 @@
  ### 4. Update contract: Total token in contract 1B, total_share 10M
   
    near call $CONTRACT_FAUCET_ID update_pool '{"total_balance_share": "1000000000", "total_share": "10000000", "total_account_share": "1"}' 
+   
     --accountId $MAIN_ACCOUNT
 
  ### 5. Account faucet token
   
    account (faucet) faucet 1M Token 
+   
    near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "1000000"}' --accountId $CONTRACT_FAUCET_ID --deposit $ONE_YOCTO --gas $GAS
 
    account (test1) faucet 2M Token 
+   
    near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "2000000"}' --accountId $ACCOUNT_TEST1 --deposit $ONE_YOCTO --gas $GAS
 
    account (test2) faucet 3M Token 
