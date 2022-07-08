@@ -1,6 +1,9 @@
+<sup>
+  
 ## faucet-contract
 
-  <sup>
+  
+  ### environment variable setting
   
   export MAIN_ACCOUNT=phongnguyen2022.testnet
   
