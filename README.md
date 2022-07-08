@@ -18,10 +18,10 @@ near create-account $CONTRACT_FT_ID --masterAccount $MAIN_ACCOUNT --initialBalan
 near create-account $ACCOUNT_TEST1 --masterAccount $MAIN_ACCOUNT --initialBalance 2
 near create-account $ACCOUNT_TEST2 --masterAccount $MAIN_ACCOUNT --initialBalance 2
 
-# 1. Deploy:
+### 1. Deploy:
 near deploy --wasmFile out/faucetcontract.wasm --accountId $CONTRACT_FAUCET_ID
 
-# 2. Init contract: with max_share: 10M
+### 2. Init contract: with max_share: 10M
 near call $$CONTRACT_FAUCET_ID new '{"owner_id": "'$MAIN_ACCOUNT'", "ft_contract_id": "'$CONTRACT_FT_ID'", "max_share": 10000000}' --accountId $MAIN_ACCOUNT
 
 # 3. Update contract: with max_share: 30M
