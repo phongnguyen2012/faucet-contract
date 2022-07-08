@@ -9,17 +9,18 @@
   export ACCOUNT_TEST2=test2.$MAIN_ACCOUNT
   export GAS=300000000000000
 </sub>
+<sub> 
   echo "################### DELETE ACCOUNT ###################"
   near delete $CONTRACT_FAUCET_ID $MAIN_ACCOUNT
   near delete $ACCOUNT_TEST1 $MAIN_ACCOUNT
   near delete $ACCOUNT_TEST2 $MAIN_ACCOUNT
-
-
+</sub>
+<sub> 
 echo "################### CREATE ACCOUNT ###################"
 near create-account $CONTRACT_FT_ID --masterAccount $MAIN_ACCOUNT --initialBalance 2
 near create-account $ACCOUNT_TEST1 --masterAccount $MAIN_ACCOUNT --initialBalance 2
 near create-account $ACCOUNT_TEST2 --masterAccount $MAIN_ACCOUNT --initialBalance 2
-
+</sub>
 #### 1. Deploy:
 near deploy --wasmFile out/faucetcontract.wasm --accountId $CONTRACT_FAUCET_ID
 
