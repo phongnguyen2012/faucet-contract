@@ -1,5 +1,6 @@
 ## faucet-contract
 <sup>
+  
   export MAIN_ACCOUNT=phongnguyen2022.testnet
   export NEAR_ENV=testnet
   export CONTRACT_FAUCET_ID=faucet.$MAIN_ACCOUNT
@@ -10,11 +11,13 @@
   export GAS=300000000000000
 
   echo "################### DELETE ACCOUNT ###################"
+  
   near delete $CONTRACT_FAUCET_ID $MAIN_ACCOUNT
   near delete $ACCOUNT_TEST1 $MAIN_ACCOUNT
   near delete $ACCOUNT_TEST2 $MAIN_ACCOUNT
 
    echo "################### CREATE ACCOUNT ###################"
+  
    near create-account $CONTRACT_FT_ID --masterAccount $MAIN_ACCOUNT --initialBalance 2
    near create-account $ACCOUNT_TEST1 --masterAccount $MAIN_ACCOUNT --initialBalance 2
    near create-account $ACCOUNT_TEST2 --masterAccount $MAIN_ACCOUNT --initialBalance 2
@@ -47,4 +50,5 @@
    ##### 7. Get info balance
    near call $CONTRACT_FAUCET_ID get_share_balance_of '{"account_id": "'$ACCOUNT_TEST1'"}' --accountId $MAIN_ACCOUNT
    near call $CONTRACT_FAUCET_ID get_share_balance_of '{"account_id": "'$ACCOUNT_TEST2'"}' --accountId $MAIN_ACCOUNT
+  
 </sup>
