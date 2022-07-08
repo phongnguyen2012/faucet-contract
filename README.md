@@ -59,13 +59,13 @@
 
  ### 5. Account faucet token
   
-   ##### account (faucet) faucet 1M Token 
+   account (faucet) faucet 1M Token 
    near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "1000000"}' --accountId $CONTRACT_FAUCET_ID --deposit $ONE_YOCTO --gas $GAS
 
-   ##### account (test1) faucet 2M Token 
+   account (test1) faucet 2M Token 
    near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "2000000"}' --accountId $ACCOUNT_TEST1 --deposit $ONE_YOCTO --gas $GAS
 
-   ##### account (test2) faucet 3M Token 
+   account (test2) faucet 3M Token 
   
    near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "3000000"}' --accountId $ACCOUNT_TEST2 --deposit $ONE_YOCTO --gas $GAS
 
