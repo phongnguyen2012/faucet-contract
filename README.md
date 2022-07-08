@@ -44,7 +44,9 @@
 
  ### 2. Init contract: with max_share: 10M
   
-   near call $$CONTRACT_FAUCET_ID new '{"owner_id": "'$MAIN_ACCOUNT'", "ft_contract_id": "'$CONTRACT_FT_ID'", "max_share": 10000000}' --accountId           $MAIN_ACCOUNT
+   near call $$CONTRACT_FAUCET_ID new '{"owner_id": "'$MAIN_ACCOUNT'", "ft_contract_id": "'$CONTRACT_FT_ID'", "max_share": 10000000}' --accountId
+   
+   $MAIN_ACCOUNT
 
  ### 3. Update contract: with max_share: 30M
   
@@ -52,7 +54,8 @@
 
  ### 4. Update contract: Total token in contract 1B, total_share 10M
   
-   near call $CONTRACT_FAUCET_ID update_pool '{"total_balance_share": "1000000000", "total_share": "10000000", "total_account_share": "1"}' --accountId      $MAIN_ACCOUNT
+   near call $CONTRACT_FAUCET_ID update_pool '{"total_balance_share": "1000000000", "total_share": "10000000", "total_account_share": "1"}' --accountId      
+   $MAIN_ACCOUNT
 
  ### 5. Account faucet token
   
