@@ -1,5 +1,5 @@
 ## faucet-contract
-<sub> 
+<sup>
    export MAIN_ACCOUNT=phongnguyen2022.testnet
   export NEAR_ENV=testnet
   export CONTRACT_FAUCET_ID=faucet.$MAIN_ACCOUNT
@@ -47,4 +47,4 @@ near call $CONTRACT_FAUCET_ID get_faucet_info '' --accountId $CONTRACT_FAUCET_ID
 ##### 7. Get info balance
 near call $CONTRACT_FAUCET_ID get_share_balance_of '{"account_id": "'$ACCOUNT_TEST1'"}' --accountId $MAIN_ACCOUNT
 near call $CONTRACT_FAUCET_ID get_share_balance_of '{"account_id": "'$ACCOUNT_TEST2'"}' --accountId $MAIN_ACCOUNT
-</sub>
+</sup>
