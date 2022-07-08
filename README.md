@@ -1,5 +1,5 @@
 ## faucet-contract
-<sup>
+
   
   export MAIN_ACCOUNT=phongnguyen2022.testnet
   export NEAR_ENV=testnet
@@ -21,7 +21,7 @@
    near create-account $CONTRACT_FT_ID --masterAccount $MAIN_ACCOUNT --initialBalance 2
    near create-account $ACCOUNT_TEST1 --masterAccount $MAIN_ACCOUNT --initialBalance 2
    near create-account $ACCOUNT_TEST2 --masterAccount $MAIN_ACCOUNT --initialBalance 2
-
+<sup>
    #### 1. Deploy:
    near deploy --wasmFile out/faucetcontract.wasm --accountId $CONTRACT_FAUCET_ID
 
