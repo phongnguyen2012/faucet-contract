@@ -1,6 +1,6 @@
 ## faucet-contract
 
-  
+  <sup>
   export MAIN_ACCOUNT=phongnguyen2022.testnet
   export NEAR_ENV=testnet
   export CONTRACT_FAUCET_ID=faucet.$MAIN_ACCOUNT
@@ -9,18 +9,19 @@
   export ACCOUNT_TEST1=test1.$MAIN_ACCOUNT
   export ACCOUNT_TEST2=test2.$MAIN_ACCOUNT
   export GAS=300000000000000
-
+</sup>
   echo "################### DELETE ACCOUNT ###################"
-  
+  <sup>
   near delete $CONTRACT_FAUCET_ID $MAIN_ACCOUNT
   near delete $ACCOUNT_TEST1 $MAIN_ACCOUNT
   near delete $ACCOUNT_TEST2 $MAIN_ACCOUNT
-
+</sup>
    echo "################### CREATE ACCOUNT ###################"
-  
+  <sup>
    near create-account $CONTRACT_FT_ID --masterAccount $MAIN_ACCOUNT --initialBalance 2
    near create-account $ACCOUNT_TEST1 --masterAccount $MAIN_ACCOUNT --initialBalance 2
    near create-account $ACCOUNT_TEST2 --masterAccount $MAIN_ACCOUNT --initialBalance 2
+  </sup>
 <sup>
    #### 1. Deploy:
    near deploy --wasmFile out/faucetcontract.wasm --accountId $CONTRACT_FAUCET_ID
