@@ -18,20 +18,20 @@ near create-account $CONTRACT_FT_ID --masterAccount $MAIN_ACCOUNT --initialBalan
 near create-account $ACCOUNT_TEST1 --masterAccount $MAIN_ACCOUNT --initialBalance 2
 near create-account $ACCOUNT_TEST2 --masterAccount $MAIN_ACCOUNT --initialBalance 2
 
-### 1. Deploy:
+#### 1. Deploy:
 near deploy --wasmFile out/faucetcontract.wasm --accountId $CONTRACT_FAUCET_ID
 
-### 2. Init contract: with max_share: 10M
+#### 2. Init contract: with max_share: 10M
 near call $$CONTRACT_FAUCET_ID new '{"owner_id": "'$MAIN_ACCOUNT'", "ft_contract_id": "'$CONTRACT_FT_ID'", "max_share": 10000000}' --accountId $MAIN_ACCOUNT
 
-# 3. Update contract: with max_share: 30M
+#### 3. Update contract: with max_share: 30M
 near call $CONTRACT_FAUCET_ID update_max_share '{"max_share": "30000000"}' --accountId $MAIN_ACCOUNT
 
-# 4. Update contract: Total token in contract 1B, total_share 10M
+#### 4. Update contract: Total token in contract 1B, total_share 10M
 near call $CONTRACT_FAUCET_ID update_pool '{"total_balance_share": "1000000000", "total_share": "10000000", "total_account_share": "1"}' --accountId $MAIN_ACCOUNT
 
-#5. Account faucet token
-##account (faucet) faucet 1M Token 
+#### 5. Account faucet token
+account (faucet) faucet 1M Token 
 near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "1000000"}' --accountId $CONTRACT_FAUCET_ID --deposit $ONE_YOCTO --gas $GAS
 
 ##account (test1) faucet 2M Token 
@@ -40,9 +40,9 @@ near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "2000000"}' --accountId $
 ##account (test2) faucet 3M Token 
 near call $CONTRACT_FAUCET_ID faucet_token '{"amount": "3000000"}' --accountId $ACCOUNT_TEST2 --deposit $ONE_YOCTO --gas $GAS
 
-#6. Get info faucet
+##### 6. Get info faucet
 near call $CONTRACT_FAUCET_ID get_faucet_info '' --accountId $CONTRACT_FAUCET_ID
 
-#7. Get info balance
+##### 7. Get info balance
 near call $CONTRACT_FAUCET_ID get_share_balance_of '{"account_id": "'$ACCOUNT_TEST1'"}' --accountId $MAIN_ACCOUNT
 near call $CONTRACT_FAUCET_ID get_share_balance_of '{"account_id": "'$ACCOUNT_TEST2'"}' --accountId $MAIN_ACCOUNT
