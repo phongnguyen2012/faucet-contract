@@ -8,12 +8,12 @@
   export ACCOUNT_TEST1=test1.$MAIN_ACCOUNT
   export ACCOUNT_TEST2=test2.$MAIN_ACCOUNT
   export GAS=300000000000000
-
+</sub>
   echo "################### DELETE ACCOUNT ###################"
   near delete $CONTRACT_FAUCET_ID $MAIN_ACCOUNT
   near delete $ACCOUNT_TEST1 $MAIN_ACCOUNT
   near delete $ACCOUNT_TEST2 $MAIN_ACCOUNT
-</sub>
+
 
 echo "################### CREATE ACCOUNT ###################"
 near create-account $CONTRACT_FT_ID --masterAccount $MAIN_ACCOUNT --initialBalance 2
