@@ -1,6 +1,6 @@
 ## faucet-contract
 <sub> 
-    export MAIN_ACCOUNT=phongnguyen2022.testnet
+   export MAIN_ACCOUNT=phongnguyen2022.testnet
   export NEAR_ENV=testnet
   export CONTRACT_FAUCET_ID=faucet.$MAIN_ACCOUNT
   export CONTRACT_FT_ID=ft.$MAIN_ACCOUNT
@@ -14,6 +14,7 @@
   near delete $ACCOUNT_TEST1 $MAIN_ACCOUNT
   near delete $ACCOUNT_TEST2 $MAIN_ACCOUNT
 </sub>
+
 echo "################### CREATE ACCOUNT ###################"
 near create-account $CONTRACT_FT_ID --masterAccount $MAIN_ACCOUNT --initialBalance 2
 near create-account $ACCOUNT_TEST1 --masterAccount $MAIN_ACCOUNT --initialBalance 2
